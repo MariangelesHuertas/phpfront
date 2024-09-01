@@ -20,23 +20,24 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
+            width: 100%;
+            max-width: 1200px; /* Ancho máximo del contenedor */
+            padding: 20px;
         }
         .logo {
-            margin-bottom: 10px; /* Ajustado para más espacio entre el logo y el nombre */
+            margin-bottom: 10px; /* Espacio entre el logo y el nombre */
         }
         .logo img {
-            height: 80px; /* Tamaño del logo */
+            height: 100px; /* Tamaño del logo */
         }
         h1 {
             margin: 0;
             margin-bottom: 20px;
-            font-size: 24px;
+            font-size: 32px; /* Tamaño del nombre */
         }
         form {
             display: flex;
             width: 100%;
-            max-width: 800px;
         }
         input[type="text"] {
             flex: 1;
@@ -74,6 +75,7 @@
     </div>
 </body>
 </html>
+
 
 
 
