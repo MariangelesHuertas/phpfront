@@ -4,7 +4,7 @@ if (isset($_GET['query'])) {
     $query = urlencode($_GET['query']);
     
     // URL del endpoint al que se hará la solicitud
-    $endpoint = "http://18.234.77.1:8000/api?query=" . $query;
+    $endpoint = "http://52.87.243.50:8000/api?query=" . $query;
 
     // Inicializar cURL
     $ch = curl_init();
