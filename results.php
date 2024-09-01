@@ -46,7 +46,7 @@ if (isset($_GET['query'])) {
 </head>
 <body>
     <h1>Resultados de Búsqueda</h1>
-    <form method="get" action="search_form.php">
+    <form method="get" action="results.php">
         <input type="text" name="query" value="<?php echo htmlspecialchars($_GET['query'], ENT_QUOTES); ?>" required>
         <button type="submit">Volver a buscar</button>
     </form>
