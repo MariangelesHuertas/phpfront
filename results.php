@@ -4,7 +4,7 @@ if (isset($_GET['query'])) {
     $query = urlencode($_GET['query']);
     
     // URL del endpoint al que se hará la solicitud
-    $endpoint = "http://ip172-18-0-35-cr9r9e2im2rg00fl4om0-8000.direct.labs.play-with-docker.com/api?query=" . $query;
+    $endpoint = "http://34.205.144.82:8000/api?query=" . $query;
 
     // Inicializar cURL
     $ch = curl_init();
