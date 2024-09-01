@@ -25,7 +25,7 @@
 </head>
 <body>
     <h1>Buscador</h1>
-    <form method="get" action="search_results.php">
+    <form method="get" action="results.php">
         <input type="text" name="query" placeholder="Buscar..." required>
         <button type="submit">Buscar</button>
     </form>
