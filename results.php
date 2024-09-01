@@ -32,27 +32,53 @@ if (isset($_GET['query'])) {
             margin: 0;
             padding: 0;
             background-color: #f4f4f4;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
         }
         .container {
-            width: 100%;
-            max-width: 1200px;
             padding: 20px;
             box-sizing: border-box;
+            background: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            max-width: 1200px;
+            margin: 20px;
         }
         h1 {
             margin: 0;
             margin-bottom: 20px;
             font-size: 32px;
+            text-align: left;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .logo img {
+            height: 50px;
+            margin-right: 10px;
+        }
+        .logo h1 {
+            margin: 0;
+            font-size: 24px;
         }
         form {
             display: flex;
+            align-items: center;
             margin-bottom: 20px;
             width: 100%;
+        }
+        .logo-form {
+            display: flex;
+            align-items: center;
+            margin-right: 10px;
+        }
+        .logo-form img {
+            height: 40px;
+            margin-right: 10px;
+        }
+        .logo-form h1 {
+            margin: 0;
+            font-size: 24px;
         }
         input[type="text"] {
             flex: 1;
@@ -103,17 +129,22 @@ if (isset($_GET['query'])) {
 </head>
 <body>
     <div class="container">
-        <h1>Resultados de Búsqueda</h1>
-        <form method="get" action="results.php">
+        <div class="logo">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSemk0kswnUdKZIn3-MO1nojICQWnfhNP769A&s" alt="MiniHub Logo">
+            <h1>MiniHub</h1>
+        </div>
+        <form method="get" action="index.php">
+            <div class="logo-form">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSemk0kswnUdKZIn3-MO1nojICQWnfhNP769A&s" alt="MiniHub Logo">
+                <h1>MiniHub</h1>
+            </div>
             <input type="text" name="query" value="<?php echo htmlspecialchars($_GET['query'], ENT_QUOTES); ?>" required>
             <button type="submit">Volver a buscar</button>
         </form>
 
         <?php if (isset($data)): ?>
             <div class="results">
-                <p><strong>Consulta:</strong> <?php echo htmlspecialchars($data['query'], ENT_QUOTES); ?></p>
                 <p><strong>Tiempo:</strong> <?php echo number_format($data['time'], 2); ?> segundos</p>
-                <h3>Recomendaciones:</h3>
                 <?php if (!empty($data['recomendaciones'])): ?>
                     <?php foreach ($data['recomendaciones'] as $recommendation): ?>
                         <div class="result-item">
@@ -122,11 +153,12 @@ if (isset($_GET['query'])) {
                         </div>
                     <?php endforeach; ?>
                 <?php else: ?>
-                    <p>No se encontraron recomendaciones.</p>
+                    <p>No se encontraron resultados.</p>
                 <?php endif; ?>
             </div>
         <?php endif; ?>
     </div>
 </body>
 </html>
+
 
