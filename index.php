@@ -22,7 +22,7 @@
         form {
             display: flex;
             width: 100%;
-            max-width: 600px;
+            max-width: 800px;
         }
         input[type="text"] {
             flex: 1;
@@ -31,6 +31,7 @@
             border: 1px solid #ccc;
             border-radius: 4px;
             margin-right: 10px;
+            box-sizing: border-box; /* Include padding and border in element's total width and height */
         }
         button {
             padding: 10px 20px;
@@ -48,7 +49,7 @@
             margin-bottom: 20px;
         }
         .logo img {
-            height: 50px;
+            height: 80px; /* Aumenta el tamaño del logo */
         }
     </style>
 </head>
@@ -63,5 +64,6 @@
     </form>
 </body>
 </html>
+
 
 
