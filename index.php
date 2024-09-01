@@ -16,8 +16,22 @@
             height: 100vh;
             background-color: #f4f4f4;
         }
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .logo {
+            margin-bottom: 10px; /* Ajustado para más espacio entre el logo y el nombre */
+        }
+        .logo img {
+            height: 80px; /* Tamaño del logo */
+        }
         h1 {
+            margin: 0;
             margin-bottom: 20px;
+            font-size: 24px;
         }
         form {
             display: flex;
@@ -31,7 +45,7 @@
             border: 1px solid #ccc;
             border-radius: 4px;
             margin-right: 10px;
-            box-sizing: border-box; /* Include padding and border in element's total width and height */
+            box-sizing: border-box; /* Incluye padding y border en el ancho total */
         }
         button {
             padding: 10px 20px;
@@ -45,23 +59,19 @@
         button:hover {
             background-color: #0056b3;
         }
-        .logo {
-            margin-bottom: 20px;
-        }
-        .logo img {
-            height: 80px; /* Aumenta el tamaño del logo */
-        }
     </style>
 </head>
 <body>
-    <div class="logo">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSemk0kswnUdKZIn3-MO1nojICQWnfhNP769A&s" alt="MiniHub Logo">
+    <div class="container">
+        <div class="logo">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSemk0kswnUdKZIn3-MO1nojICQWnfhNP769A&s" alt="MiniHub Logo">
+        </div>
+        <h1>MiniHub</h1>
+        <form method="get" action="results.php">
+            <input type="text" name="query" placeholder="Buscar..." required>
+            <button type="submit">Buscar</button>
+        </form>
     </div>
-    <h1>MiniHub</h1>
-    <form method="get" action="results.php">
-        <input type="text" name="query" placeholder="Buscar..." required>
-        <button type="submit">Buscar</button>
-    </form>
 </body>
 </html>
 
