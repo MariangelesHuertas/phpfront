@@ -35,16 +35,18 @@ if (isset($_GET['query'])) {
         }
         .header {
             background-color: #e0e0e0;
-            padding: 20px;
+            padding: 10px;
             display: flex;
             align-items: center;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
             border-bottom: 1px solid #ccc;
+            margin-bottom: 20px; /* Reducir el espacio debajo del header */
         }
         .logo {
             display: flex;
             align-items: center;
             margin-right: 20px;
+            text-decoration: none; /* Eliminar el subrayado del enlace */
         }
         .logo img {
             height: 50px;
@@ -53,6 +55,7 @@ if (isset($_GET['query'])) {
         .logo h1 {
             margin: 0;
             font-size: 24px;
+            color: #333;
         }
         .search-form {
             display: flex;
@@ -85,10 +88,8 @@ if (isset($_GET['query'])) {
             box-sizing: border-box;
         }
         .results {
-            margin-top: 20px;
-            width: 100%;
             background: white;
-            padding: 20px;
+            padding: 15px;
             border-radius: 8px;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
@@ -116,13 +117,13 @@ if (isset($_GET['query'])) {
 </head>
 <body>
     <div class="header">
-        <div class="logo">
+        <a href="index.php" class="logo">
             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSemk0kswnUdKZIn3-MO1nojICQWnfhNP769A&s" alt="MiniHub Logo">
             <h1>MiniHub</h1>
-        </div>
-        <form method="get" action="index.php" class="search-form">
+        </a>
+        <form method="get" action="results.php" class="search-form">
             <input type="text" name="query" value="<?php echo htmlspecialchars($_GET['query'], ENT_QUOTES); ?>" required>
-            <button type="submit">Volver a buscar</button>
+            <button type="submit">Buscar</button>
         </form>
     </div>
 
@@ -145,5 +146,6 @@ if (isset($_GET['query'])) {
     </div>
 </body>
 </html>
+
 
 
