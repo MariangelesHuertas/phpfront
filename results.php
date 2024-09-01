@@ -33,25 +33,18 @@ if (isset($_GET['query'])) {
             padding: 0;
             background-color: #f4f4f4;
         }
-        .container {
+        .header {
+            background-color: #e0e0e0;
             padding: 20px;
-            box-sizing: border-box;
-            background: white;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
-            max-width: 1200px;
-            margin: 20px;
-        }
-        h1 {
-            margin: 0;
-            margin-bottom: 20px;
-            font-size: 32px;
-            text-align: left;
+            display: flex;
+            align-items: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            border-bottom: 1px solid #ccc;
         }
         .logo {
             display: flex;
             align-items: center;
-            margin-bottom: 20px;
+            margin-right: 20px;
         }
         .logo img {
             height: 50px;
@@ -61,26 +54,12 @@ if (isset($_GET['query'])) {
             margin: 0;
             font-size: 24px;
         }
-        form {
+        .search-form {
             display: flex;
             align-items: center;
-            margin-bottom: 20px;
             width: 100%;
         }
-        .logo-form {
-            display: flex;
-            align-items: center;
-            margin-right: 10px;
-        }
-        .logo-form img {
-            height: 40px;
-            margin-right: 10px;
-        }
-        .logo-form h1 {
-            margin: 0;
-            font-size: 24px;
-        }
-        input[type="text"] {
+        .search-form input[type="text"] {
             flex: 1;
             padding: 10px;
             font-size: 16px;
@@ -89,7 +68,7 @@ if (isset($_GET['query'])) {
             margin-right: 10px;
             box-sizing: border-box;
         }
-        button {
+        .search-form button {
             padding: 10px 20px;
             font-size: 16px;
             border: none;
@@ -98,12 +77,20 @@ if (isset($_GET['query'])) {
             border-radius: 4px;
             cursor: pointer;
         }
-        button:hover {
+        .search-form button:hover {
             background-color: #0056b3;
+        }
+        .container {
+            padding: 20px;
+            box-sizing: border-box;
         }
         .results {
             margin-top: 20px;
             width: 100%;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
         .result-item {
             border-bottom: 1px solid #ddd;
@@ -128,20 +115,18 @@ if (isset($_GET['query'])) {
     </style>
 </head>
 <body>
-    <div class="container">
+    <div class="header">
         <div class="logo">
             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSemk0kswnUdKZIn3-MO1nojICQWnfhNP769A&s" alt="MiniHub Logo">
             <h1>MiniHub</h1>
         </div>
-        <form method="get" action="index.php">
-            <div class="logo-form">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSemk0kswnUdKZIn3-MO1nojICQWnfhNP769A&s" alt="MiniHub Logo">
-                <h1>MiniHub</h1>
-            </div>
+        <form method="get" action="index.php" class="search-form">
             <input type="text" name="query" value="<?php echo htmlspecialchars($_GET['query'], ENT_QUOTES); ?>" required>
             <button type="submit">Volver a buscar</button>
         </form>
+    </div>
 
+    <div class="container">
         <?php if (isset($data)): ?>
             <div class="results">
                 <p><strong>Tiempo:</strong> <?php echo number_format($data['time'], 2); ?> segundos</p>
