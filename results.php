@@ -84,7 +84,7 @@ if (isset($_GET['query'])) {
             background-color: #0056b3;
         }
         .container {
-            padding: 20px;
+            padding: 0px;
             box-sizing: border-box;
         }
         .results {
